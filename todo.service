@@ -1,0 +1,10 @@
+[Unit]
+Description = todo Service
+[Service]
+Environment=TODO_API_PORT=8080
+Environment=REDIS_HOST=172.31.30.228
+ExecStart=/bin/node /home/ubuntu/todo/server.js
+SyslogIdentifier=todo
+
+[Install]
+WantedBy=multi-user.target
