@@ -5,6 +5,7 @@ Description = todo Service
 Environment=REDIS_HOST=172.31.30.228
 ExecStart=/bin/node /home/ubuntu/todo/server.js
 SyslogIdentifier=todo
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
