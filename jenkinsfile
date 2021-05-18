@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+    stages {
+      stage ('Prepare Artifacts') {
+        steps {
+          sh '''
+             zip -r ../todo.zip . -i *
+          '''
+          }
+        }
+     stage ('Upload Artifact') {
+        steps {
+        sh '''
+          curl -v -u admin:admin --upload-file todo.zip http://3.238.150.185:8081/repository/todo/todo.zip
+         
+           ''' 
+          }
+        }
+     }
+  }
