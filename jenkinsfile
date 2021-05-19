@@ -1,10 +1,18 @@
 pipeline {
   agent any
     stages {
+      stage('Download Dependencies') {
+        steps {
+         sh '''
+           npm install
+         '''
+       }
+      }
+      stage ('')
       stage ('Prepare Artifacts') {
         steps {
           sh '''
-              zip -r todo.zip *
+              zip -r todo.zip node_modules server.js
           '''
           }
         }
