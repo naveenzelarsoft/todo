@@ -19,7 +19,7 @@ pipeline {
      stage ('Upload Artifact') {
         steps {
         sh '''
-          curl -f -v -u admin:admin --upload-file todo.zip http://3.236.187.195:8081/repository/todo/todo.zip
+          curl -f -v -u admin:admin --upload-file todo.zip http://3.208.90.51:8081/repository/todo/todo.zip
          
            ''' 
           }
