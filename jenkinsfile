@@ -6,7 +6,7 @@ pipeline {
       stage('Download Dependencies') {
         steps {
          sh '''
-           sudo npm install
+           npm install
          '''
        }
       }
