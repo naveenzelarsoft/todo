@@ -1,28 +1,9 @@
-pipeline {
-  agent {
-             label 'dev'
-          }
-    stages {
-      stage ('Download Dependencies') {
-        steps {
-         sh '''
-           npm install
-         '''
-       }
-      }
-      stage ('Prepare Artifacts') {
-        steps {
-          sh '''
-              zip -r todo.zip node_modules server.js
-          '''
-          }
-        }
-     stage ('Upload Artifact') {
-        steps {
-        sh '''
-          curl -f -v -u admin:admin --upload-file todo.zip http://3.208.90.51:8081/repository/todo/todo.zip
-           ''' 
-          }
-        }
-     }
-  }
+@Library('todos') _
+
+todos(
+ COMPONENT         : 'todo',
+ PROJECT_NAME      : "todos",
+ SLAVE_LABEL       : "DEV",
+ APP_TYPE          : "NODEJS",
+ SKIP_NEXUS_UPLOAD : true
+)
