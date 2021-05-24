@@ -1,7 +1,7 @@
 @Library('todos') _
 
 todos(
- COMPONENT         : 'todos',
+ COMPONENT         : 'todo',
  PROJECT_NAME      : "todos",
  SLAVE_LABEL       : "DEV",
  APP_TYPE          : "NODEJS",
