@@ -1,6 +1,8 @@
-FROM        golang
-COPY        . ./login
-WORKDIR     /login
-RUN         go build
-CMD         [ "/login/login" ]
+FROM        node
+RUN         mkdir /app
+WORKDIR     /app
+COPY        server.js .
+COPY        package.json .
+RUN         npm install
+CMD         [ "node", "server.js" ]
 EXPOSE      8080
