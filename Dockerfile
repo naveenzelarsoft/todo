@@ -1,6 +1,6 @@
 FROM        node
-RUN         mkdir /app
-WORKDIR     /app
+RUN         mkdir /todo
+WORKDIR     /todo
 COPY        server.js .
 COPY        package.json .
 RUN         npm install
